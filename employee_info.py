@@ -19,20 +19,16 @@ def get_employees_by_age_range(age_lower_limit, age_upper_limit):
     return result
 
 def calculate_average_salary():
-    total = 0
-    average = 0
+    total = sum(item["salary"] for item in employee_data)
+    average = total / len(employee_data)
 
     #add your implementation to calculate here
-
-
     return average
 
 def get_employees_by_dept(department):
-    result = []
-
+    #result = []
+    result = [item for item in employee_data if item["department"] == department]
     # Add your implementation from here
-
-
     return result
 
 def display_all_records():
